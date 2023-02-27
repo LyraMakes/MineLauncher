@@ -1,4 +1,4 @@
-package com.caitmake.minelauncher;
+package com.lyramake.minelauncher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,6 +24,8 @@ public class ServerProperties {
         ObjectMapper mapper = new ObjectMapper();
         ServerProperties props;
         try {
+            // Uncomment the next line to use a bodged fix for linux suppport
+            if (file == null) throw new IOException();
             props = mapper.readValue(file, ServerProperties.class);
         } catch (IOException ioExc) {
             System.err.println("Error fetching properties file, using default properties instead");

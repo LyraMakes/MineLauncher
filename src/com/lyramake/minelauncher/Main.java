@@ -1,13 +1,13 @@
-package com.caitmake.minelauncher;
+package com.lyramake.minelauncher;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 public class Main {
-    private static final String title = "MineLauncher v0.1";
 
     public static void main(String[] args) {
         setLookAndFeel();
-        SwingUtilities.invokeLater(() -> new GUI(title + " - Home"));
+        SwingUtilities.invokeLater(() -> new GUI(Configuration.WINDOW_TITLE + " - Home"));
     }
 
     private static void setLookAndFeel() {
